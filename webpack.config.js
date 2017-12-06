@@ -10,7 +10,7 @@ module.exports = {
   //devtool: 'source-map',
   cache: true,
   output: {
-    path: `extension/js`,
+    path: require("path").join(__dirname,`extension/js`),
     publicPath: '/',
     filename: "[name].js"
   },
