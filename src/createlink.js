@@ -24,6 +24,9 @@ class CreateLink {
 
     var data = def.format.
       replace(/%url%/g, url).
+      // How to get the file name from a full path using JavaScript? - Stack Overflow
+      // https://stackoverflow.com/questions/423376/how-to-get-the-file-name-from-a-full-path-using-javascript
+      replace(/%file%/g, url.replace(/.*[\\\/]/g, '')).
       replace(/%text%/g, text.replace(/\n/g, ' ')).
       replace(/%text_n%/g, text).
       replace(/%text_br%/g, text.replace(/\n/g, '<br />\n')).
