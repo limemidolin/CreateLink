@@ -2,8 +2,7 @@
     "version": "0.4.1",
     "manifest_version": 2,
     "background": {
-        "scripts": ["js/background.js"],
-        "persistent": false
+        "scripts": ["js/background.js"]
     },
     "browser_action": {
         "default_icon": "icon64.png",
@@ -18,7 +17,11 @@
         "64": "icon64.png"
     },
     "name": "Create Link",
-    "options_page": "options.html",
+
+    "options_ui": {
+        "page": "options.html"
+    },
+
     "content_scripts": [{
         "matches": ["http://*/*", "https://*/*", "file:///*/*"],
         "css": [],
@@ -33,5 +36,5 @@
             "description": "Current tab in default format"
         }
     },
-    "permissions": ["tabs", "http://*/*", "https://*/*", "contextMenus"]
+    "permissions": ["tabs", "http://*/*", "https://*/*", "contextMenus", "storage", "clipboardWrite"]
 }
